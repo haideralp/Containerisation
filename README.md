@@ -1,5 +1,10 @@
 # Microservices Architecture
 
+
+## Diagram Displaying Containerisation Vs Virtualisation
+
+
+
 ## What Is Containerisation And Docker ?
    - Containerisation --> is a form of virtualization where applications run in isolated user spaces, called containers, while using the same shared operating system (OS).
     
@@ -15,3 +20,6 @@
   4. **Reduces costs**. Docker is less demanding when it comes to the hardware required to run it.
 
 ## Docker Cons:
+
+     1. Does not provide cross-platform compatability.
+     2. Secuirty risks > if you are moving multiple pieces within  large scale dynamic enviromnet.   
