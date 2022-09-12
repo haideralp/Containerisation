@@ -42,7 +42,7 @@
    
 ### Docker Setup & Installation
 
-- Clicke here to follow guidelines. Download and run  `exe ` file.
+- Click [here](https://docs.docker.com/desktop/install/windows-install/) to follow guidelines. Download and run  `exe ` file.
 - Ensure on windows WSL2 latest update is configured from power shell as per guide above.
 - Setup Docker Account.
 - Restart maybe required a few times.
