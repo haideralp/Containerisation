@@ -31,10 +31,11 @@
   4. Data recovery and strategy required > this is needed in case docker container goes down. Solutions are in place but not very scalable and are not automated.
    
 ### Docker Setup & Installation
-- Use the (link inserted), installe `exe ` file and run it. 
+
+- Use the (link inserted), downloadd and run  `exe ` file.
 - Ensure on windows WSL2 latest update is configured from power shell as per guide above. 
 - Setup Docker Account.
-- Restart maybe required few times. 
+- Restart maybe required few times.
 
 ## Docker Best Practices:
 
