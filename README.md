@@ -3,6 +3,8 @@
 
 ## Diagram Displaying Containerisation Vs Virtualisation
 
+![image](https://user-images.githubusercontent.com/97620055/189631914-d7955ea6-32ca-44fc-ab7a-91a5b2a6b22c.png)
+
 
 
 ## What Is Containerisation And Docker ?
@@ -22,4 +24,5 @@
 ## Docker Cons:
 
      1. Does not provide cross-platform compatability.
-     2. Secuirty risks > if you are moving multiple pieces within  large scale dynamic enviromnet.   
+     2. Secuirty risks > if you are moving multiple pieces within  large scale dynamic docker enviromnent.
+     
