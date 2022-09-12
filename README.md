@@ -92,5 +92,6 @@
    10. Push changes to docker hub repository using this command. `docker push container-id   username/reponame:version-of-image`
    11. Verify the changes has been made by going to `localhost:90`. 
   
+  ![Haider's DevOps](https://user-images.githubusercontent.com/97620055/189713989-67a769a4-d32e-442a-aa9d-a0d6499c0bff.PNG)
 
   - This new image created as it is public is open for anyone to pull and run with following command on their local host: `docker run -d -p 90:80 haideralp/images:v1`. 
