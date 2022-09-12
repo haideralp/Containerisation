@@ -10,7 +10,7 @@
 ## What Is Containerisation And Docker ?
    - Containerisation --> is a form of virtualization where applications run in isolated user spaces, called containers, while using the same shared operating system (OS).
     
-   - Docker --> a software platgorm simplifies the process of building, running, managing and distributing applications. It does this by virtualizing the operating system of the computer on which it is installed and running.
+   - Docker --> a software platform simplifies the process of building, running, managing and distributing applications. It does this by virtualizing the operating system of the computer on which it is installed and running.
 
 ## Benefits of Containerisation and Docker:
 
