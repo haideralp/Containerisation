@@ -129,6 +129,43 @@ CMD ["nginx","-g", "daemon off;"]
 ```
 - Once this is done run the following commands as follows:
   ~
-   * docker build -t haideralp/nginx-webhosting
-   * `docker run -d -p 80:80 haideralp/nginx-webhosting.
-   * `Verify 
+   * `docker build -t haideralp/nginx-webhosting .`
+   * `docker run -d -p 80:80 haideralp/nginx-webhosting`
+   * Verify by running `docker ps`.
+
+
+
+## Hosting Static Website on Docker
+
+
+
+## Docker Compose Task
+
+- After building the node js from the docker file. I have created docker compose file as below:
+
+``` yaml
+version: "3.9"  
+services:              #defining the services as in containers that needs be summoned using this task. 
+  mongodb:
+    container_name: mongodb   #naming my container here
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    restart: always
+    volumes:
+      - ./mongod.conf:/etc/mongod.conf  # specifying volumes to ensure environment stays consistent. 
+      - ./logs:/var/log/mongod/
+      - ./db:/var/lib/mongodb
+  
+  app:
+    container_name: nodeapp
+    restart: always
+    image: ./haideralp/nodeapp # defininf path for building of node image created from docker file earlier using build option. 
+    ports:
+      - 80:3000  #Specifying ports on which app needs to run on.
+    depends_on: 
+      - mongodb #giving condition that app is dependent on service mongodb running successfully. 
+    environment:
+      DB_HOST: mongodb://mongodb:27017     #setting of environment variables in the app.
+    command: node app/seeds/seeds.js   # executing commands to fetch data. 
+```
