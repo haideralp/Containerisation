@@ -95,3 +95,40 @@
   ![Haider's DevOps](https://user-images.githubusercontent.com/97620055/189713989-67a769a4-d32e-442a-aa9d-a0d6499c0bff.PNG)
 
   - This new image created as it is public is open for anyone to pull and run with following command on their local host: `docker run -d -p 90:80 haideralp/images:v1`. 
+
+## Copying Data From Local Host --> Container:
+
+  - Run nginx
+  - Create a local directory using `mkdir` called docker. Create `index.html` file using `nano`.
+  - You can use bootstrap to help with html templates but for simplicity I used
+
+
+
+## Automate the Building of Image
+
+- To automate the building of your image, you need to create a docker file as below and execute it. 
+
+``` yaml
+# Docker file - Creation
+# select base image
+FROM nginx:latest
+
+# label it
+LABEL Owner="haider.abedi@gmx.com"
+
+# copy data from localhost to the container
+COPY index.html /usr/share/nginx/html 
+
+# allow required port
+EXPOSE 80
+
+# execute required command
+
+CMD ["nginx","-g", "daemon off;"]
+
+```
+- Once this is done run the following commands as follows:
+  ~
+   * docker build -t haideralp/nginx-webhosting
+   * `docker run -d -p 80:80 haideralp/nginx-webhosting.
+   * `Verify 
