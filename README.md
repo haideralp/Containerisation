@@ -155,24 +155,24 @@ version: "3.9"
 services:              #defining the services as in containers that needs be summoned using this task. 
   mongodb:
     container_name: mongodb   #naming my container here
-    image: mongo:latest
+    image: mongo:3.6
     ports:
       - 27017:27017
     restart: always
     volumes:
       - ./mongod.conf:/etc/mongod.conf  # specifying volumes to ensure environment stays consistent. 
-      - ./logs:/var/log/mongod/
-      - ./db:/var/lib/mongodb
+     
   
   app:
     container_name: nodeapp
     restart: always
-    image: ./haideralp/nodeapp # defininf path for building of node image created from docker file earlier using build option. 
+    build: ./app/Dockerfile # defining path  where to build from (location of docker file)
+    image: haideralp/nodeapp # image naming convention 
     ports:
       - 80:3000  #Specifying ports on which app needs to run on.
     depends_on: 
       - mongodb #giving condition that app is dependent on service mongodb running successfully. 
     environment:
       DB_HOST: mongodb://mongodb:27017     #setting of environment variables in the app.
-    command: node app/seeds/seeds.js   # executing commands to fetch data. 
+    command: node app seeds/seed.js   # executing commands to fetch/seed data 
 ```
